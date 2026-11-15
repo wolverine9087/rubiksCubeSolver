@@ -15,15 +15,18 @@ import {
 
 const app = express();
 
+
 app.use(cors({
     origin: [
         "https://rubiks-cube-solver-alpha-two.vercel.app",
         "https://rubiks-cube-solver-dkn8543uk-ayush-cbb1.vercel.app",
+        "https://rubiks-cube-solver-q5o2yj86b-ayush-cbb1.vercel.app",
         "http://localhost:5173"
     ],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
 
 // Built-in middleware
 app.use(express.json());
