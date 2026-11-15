@@ -1,4 +1,5 @@
-const API_BASE = "/api";
+const API_ORIGIN = (import.meta.env.VITE_API_URL || "http://localhost:5000").replace(/\/$/, "");
+const API_BASE = `${API_ORIGIN}/api`;
 const TOKEN_KEY = 'cubeflow_token'
 
 export async function request(path, options = {}) {

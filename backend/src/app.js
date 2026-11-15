@@ -1,5 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
+import cors from "cors";
 
 // Import routes
 import authRoutes from "./routes/auth.routes.js";
@@ -13,6 +14,15 @@ import {
 } from "./middleware/error.middleware.js";
 
 const app = express();
+
+app.use(cors({
+    origin: [
+        "https://rubiks-cube-solver-alpha-two.vercel.app",
+        "http://localhost:5173"
+    ],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
 // Built-in middleware
 app.use(express.json());
